@@ -10,15 +10,14 @@ export default function Card({ hero, getRating }) {
     }
 
     return (
-        <div className="mt-24">
-            <span className="-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-indigo-500 text-white text-2xl">
+        <div className="mt-4">
+            <span className="-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  text-white text-2xl">
                 {hero.rating}
             </span>
-            <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 leading-10">
+            <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 py-8 ">
                 <img src={hero.coverUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-                <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60" />
+                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm  text-gray-300">
                 </div>
                 <h3 className="text-2xl font-semibold text-white">
                     <span className="absolute" />

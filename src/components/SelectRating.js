@@ -3,7 +3,7 @@ function SelectRaiting({handleClick}) {
 
   return (
     <div>
-      <p className="text-indigo-400">How do you rait this single?</p>
+      <p className="text-indigo-300">How do you rait this single?</p>
         <div className="flex justify-around ">
           {Array.from({ length: 10 }, (_, i) => (
             <div key={`${i + 1}`} className="">
