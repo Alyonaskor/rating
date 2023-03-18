@@ -1,17 +1,18 @@
 import SelectRating from "./SelectRating";
 import { useState } from "react";
 
-export default function Card({ hero }) {
+export default function Card({ hero, getRating }) {
     const [selected, setSelected] = useState(hero.rating)
   
     const handleClick = (e) => {
       setSelected(e.currentTarget.value)
+      getRating(hero.name, e.currentTarget.value)
     }
 
     return (
         <div className="mt-24">
             <span className="-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-indigo-500 text-white text-2xl">
-                {selected}
+                {hero.rating}
             </span>
             <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 leading-10">
                 <img src={hero.coverUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
