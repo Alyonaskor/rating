@@ -1,20 +1,9 @@
-import { useState } from "react"
 
-
-
-function SelectRaiting({rating,  handleClick}) {
-  // const [selected, setSelected] = useState(rating)
-
-
-  // const handleChange = (e) => {
-  //   setSelected(e.currentTarget.value);
-  // };
-
+function SelectRaiting({handleClick}) {
 
   return (
     <div>
-
-      <p className="text-gray-400">How do you rait this single?</p>
+      <p className="text-indigo-400">How do you rait this single?</p>
         <div className="flex justify-around ">
           {Array.from({ length: 10 }, (_, i) => (
             <div key={`${i + 1}`}>

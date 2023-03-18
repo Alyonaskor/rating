@@ -9,8 +9,8 @@ export default function Card({ hero }) {
     }
 
     return (
-        <div className="mt-12">
-            <span className="-my-6 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-indigo-600 text-white text-2xl">
+        <div className="mt-24">
+            <span className="-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-indigo-500 text-white text-2xl">
                 {selected}
             </span>
             <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 leading-10">
