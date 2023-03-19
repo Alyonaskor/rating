@@ -6,7 +6,7 @@ function ListCard({ heroes }) {
 
     const updateRating = (name, rating) => {
         const newList = [...heroesList];
-        newList.map((hero => (hero.name === name) &&
+        newList.map((hero => (hero.name === name && hero.rating !== +rating) &&
             (hero.rating = +rating)
         ))
         setHeroeslist(newList)
