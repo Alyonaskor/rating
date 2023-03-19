@@ -1,4 +1,3 @@
-
 function SelectRaiting({handleClick}) {
 
   return (
@@ -6,7 +5,7 @@ function SelectRaiting({handleClick}) {
       <p className="text-indigo-300">How do you rait this single?</p>
         <div className="flex justify-around ">
           {Array.from({ length: 10 }, (_, i) => (
-            <div key={`${i + 1}`} className="">
+            <div key={`${i + 1}`}>
               <button
                 value={`${i + 1}`}
                 onClick={handleClick}
