@@ -1,4 +1,4 @@
-function SelectRaiting({handleClick}) {
+function RatingNumbers({handleClick}) {
 
   return (
     <div>
@@ -20,4 +20,4 @@ function SelectRaiting({handleClick}) {
     </div>
   )
 }
-export default SelectRaiting
+export default RatingNumbers

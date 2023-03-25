@@ -1,4 +1,4 @@
-import SelectRating from "./SelectRating";
+import RatingStars from "./RatingStars";
 import { useState } from "react";
 
 export default function Card({ hero, getRating }) {
@@ -13,25 +13,21 @@ export default function Card({ hero, getRating }) {
     }
 
     return (
-        <div className="mt-4">
-            {/* <span className={`-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  text-white text-2xl`}> */}
-            <span style={{ backgroundColor: heroColor }} className={`-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full {bg-[${hero.color}]}  text-white text-2xl`}>
-                {hero.rating}
-            </span>
-            <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 py-8 ">
-                <img src={hero.coverUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60" />
-                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm  text-gray-300">
+        <div className=" flex justify-between bg-[#FFFFFF] h-[150px] mb-[18px]">
+            <div className=" flex">
+                <div className="mr-[52px] w-[266px]">
+                    <img src={hero.coverUrl} alt={hero.name}></img>
+
                 </div>
-                <h3 className="text-2xl font-semibold text-white">
-                    <span className="absolute" />
-                    {hero.name}
-                </h3>
-                <div className="text-white mb-4">
-                    <span className="absolute  " />Single: {hero.single}
-                </div>
-                <SelectRating rating={hero.rating} handleClick={handleClick} />
+                <div className=" bh-[116px] w-[269px]">
+                    <p className="my-4 text-start"> {hero.name}</p>
+                    <p className="my-2 text-start"> {hero.single}</p>
+               
+                    <RatingStars rating={hero.rating} handleClick={handleClick} color={hero.color} />
+                    
+                </div> 
             </div>
+            <div style={{ backgroundColor: heroColor }} className="w-[9px]"></div>
         </div>
     )
 }

@@ -8,10 +8,12 @@ function ListCard({ heroes }) {
 
     const updateRating = (name, rating) => {
         const newList = [...heroesList];
-        newList.map((hero => (hero.name === name && hero.rating !== +rating) &&
+
+        newList.map((hero => (hero.name === name) &&
             (hero.rating = +rating)
         ))
         setHeroeslist(newList)
+        console.log(newList);
     }
 
     function toggle() {
@@ -20,7 +22,6 @@ function ListCard({ heroes }) {
 
     useEffect(() => {
         let interval = null;
-
         const newList = [...heroesList];
         const randomElement = newList[Math.floor(Math.random() * newList.length)];
         const randomRating = Math.floor(Math.floor(Math.random() * 10) + 1);
@@ -29,7 +30,7 @@ function ListCard({ heroes }) {
         if (isActive) {
             interval = setInterval(() => {
                 setHeroeslist(newList)
-            }, (Math.random() * 5000));
+            }, (Math.random() * 2000));
         } else if (!isActive && heroesList !== 0) {
             clearInterval(interval);
         }
@@ -37,21 +38,31 @@ function ListCard({ heroes }) {
     }, [isActive, heroesList]);
 
     return (
-        <div className="sm:mx-24 mx-10 text-center">
-            <button
-                onClick={toggle}
-                className={`mb-10 text-white bg-gradient-to-br from-purple-600 to-blue-500 
-                hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300
-                 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2`}>
-                {isActive ? 'STOP RANDOM RATING' : 'RANDOM RATING'}
-            </button>
-            <div className="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                {heroesList.sort((a, b) => b.rating - a.rating).map((hero, index) => (
-                    <Card key={index} hero={hero} getRating={updateRating} />
-                ))}
+        <div>
+            <div className="h-[50px] bg-[#FF6100] py-[6px]">
+                <div className="flex ml-[1016px] w-[200px] h-[33px]  mr-[150px]  border border-[#FFFFFF] bg-[#FF711A] text-[#FFFFFF] justify-between">
+                    <div className=" w-[18px] ml-[19px]  mt-[8px] mb-[7px]">  
+                    <img src="/images/Group14.png" alt="logo"></img> 
+                    </div>
+                    <button 
+                        onClick={toggle}
+                        className="pr-[15px] text-left">
+                        {isActive ? 'Stop Random Ratin' : 'Random Ratin'}
+                    </button>
+                </div>
             </div>
-        </div >
-        )
-    }
+
+            <div className=" bg-[#2A8EB0] text-center pt-[26px]">
+
+                <div className="w-[1080px] mx-auto">
+                    {heroesList.sort((a, b) => b.rating - a.rating).map((hero, index) => (
+                        <Card key={index} hero={hero} getRating={updateRating} />
+                    ))}
+                </div>
+            </div >
+
+        </div>
+    )
+}
 
 export default ListCard
