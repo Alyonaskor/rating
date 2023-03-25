@@ -3,15 +3,19 @@ import { useState } from "react";
 
 export default function Card({ hero, getRating }) {
     const [selected, setSelected] = useState(hero.rating)
-  
+    const heroColor = hero.color
+
     const handleClick = (e) => {
-      setSelected(e.currentTarget.value)
-      getRating(hero.name, e.currentTarget.value)
+        if (e.currentTarget.value >= 1 && e.currentTarget.value <= 10) {
+            setSelected(e.currentTarget.value)
+            getRating(hero.name, e.currentTarget.value)
+        }
     }
 
     return (
         <div className="mt-4">
-            <span className="-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  text-white text-2xl">
+            {/* <span className={`-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  text-white text-2xl`}> */}
+            <span style={{ backgroundColor: heroColor }} className={`-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full {bg-[${hero.color}]}  text-white text-2xl`}>
                 {hero.rating}
             </span>
             <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 py-8 ">
@@ -26,7 +30,7 @@ export default function Card({ hero, getRating }) {
                 <div className="text-white mb-4">
                     <span className="absolute  " />Single: {hero.single}
                 </div>
-                <SelectRating rating={hero.rating} handleClick={handleClick}/>
+                <SelectRating rating={hero.rating} handleClick={handleClick} />
             </div>
         </div>
     )
