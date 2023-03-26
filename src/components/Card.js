@@ -1,16 +1,8 @@
 import SelectRating from "./SelectRating";
-import { useState } from "react";
 
-export default function Card({ hero, getRating }) {
-    const [selected, setSelected] = useState(hero.rating)
+
+export default function Card({index, hero, updateRating }) {
     const heroColor = hero.color
-
-    const handleClick = (e) => {
-        if (e.currentTarget.value >= 1 && e.currentTarget.value <= 10) {
-            setSelected(e.currentTarget.value)
-            getRating(hero.name, e.currentTarget.value)
-        }
-    }
 
     return (
         <div className="mt-4">
@@ -30,7 +22,7 @@ export default function Card({ hero, getRating }) {
                 <div className="text-white mb-4">
                     <span className="absolute  " />Single: {hero.single}
                 </div>
-                <SelectRating rating={hero.rating} handleClick={handleClick} />
+                <SelectRating index={index}  updateRating={updateRating} />
             </div>
         </div>
     )
