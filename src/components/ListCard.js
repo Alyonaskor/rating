@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 
+
 function ListCard({ heroes }) {
-    const [heroesList, setHeroeslist] = useState(heroes)
+    const [heroesList, setHeroeslist] = useState(heroes.sort((a, b) => b.rating - a.rating))
     const [isActive, setIsActive] = useState(false);
+    const [seconds, setSeconds] = useState(0);
 
-    const updateRating = (name, rating) => {
-        const newList = [...heroesList];
-
-        newList.map((hero => (hero.name === name) &&
-            (hero.rating = +rating)
-        ))
+    const updateRating = (e, index) => {
+        const newList = [...heroesList]
+        newList[index].rating !== e.currentTarget.value &&
+            (newList[index].rating = +e.currentTarget.value)
+        newList.sort((a, b) => b.rating - a.rating)
         setHeroeslist(newList)
-        console.log(newList);
+       
     }
 
     function toggle() {
@@ -25,17 +26,19 @@ function ListCard({ heroes }) {
         const newList = [...heroesList];
         const randomElement = newList[Math.floor(Math.random() * newList.length)];
         const randomRating = Math.floor(Math.floor(Math.random() * 10) + 1);
-
         randomElement.rating = randomRating
+        newList.sort((a, b) => b.rating - a.rating)
+
         if (isActive) {
             interval = setInterval(() => {
                 setHeroeslist(newList)
-            }, (Math.random() * 2000));
-        } else if (!isActive && heroesList !== 0) {
+                setSeconds(seconds => seconds + 1);
+            }, (Math.random() * 5000));
+        } else if (!isActive) {
             clearInterval(interval);
         }
         return () => clearInterval(interval);
-    }, [isActive, heroesList]);
+    }, [isActive, seconds]);
 
     return (
         <div>

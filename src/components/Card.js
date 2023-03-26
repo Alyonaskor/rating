@@ -1,16 +1,8 @@
 import RatingStars from "./RatingStars";
 import { useState } from "react";
 
-export default function Card({ hero, getRating }) {
-    const [selected, setSelected] = useState(hero.rating)
+export default function Card({index, hero, updateRating }) {
     const heroColor = hero.color
-
-    const handleClick = (e) => {
-        if (e.currentTarget.value >= 1 && e.currentTarget.value <= 10) {
-            setSelected(e.currentTarget.value)
-            getRating(hero.name, e.currentTarget.value)
-        }
-    }
 
     return (
         <div className=" flex justify-between bg-[#FFFFFF] h-[150px] mb-[18px]">
@@ -23,7 +15,7 @@ export default function Card({ hero, getRating }) {
                     <p className="my-4 text-start"> {hero.name}</p>
                     <p className="my-2 text-start"> {hero.single}</p>
                
-                    <RatingStars rating={hero.rating} handleClick={handleClick} color={hero.color} />
+                    <RatingStars   index={index} rating={hero.rating} updateRating={updateRating} color={hero.color} />
                     
                 </div> 
             </div>
