@@ -16,6 +16,8 @@ module.exports = {
       },
     },
     screens: {
+      'sm': '640px',
+      'md': '768px',
       '7xl': '1366px',
       // => @media (min-width: 1366px) { ... }
       'tall': { 'raw': '(height: 768px)' },
