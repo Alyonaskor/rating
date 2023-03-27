@@ -1,29 +1,24 @@
-import SelectRating from "./SelectRating";
+import RatingStars from "./RatingStars";
 
 
 export default function Card({index, hero, updateRating }) {
-    const heroColor = hero.color
 
     return (
-        <div className="mt-4">
-            {/* <span className={`-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  text-white text-2xl`}> */}
-            <span style={{ backgroundColor: heroColor }} className={`-my-10 -mx-4 z-30 relative flex h-14 w-14 items-center justify-center rounded-full {bg-[${hero.color}]}  text-white text-2xl`}>
-                {hero.rating}
-            </span>
-            <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 py-8 ">
-                <img src={hero.coverUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60" />
-                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm  text-gray-300">
+        <div className=" flex justify-between bg-[#FFFFFF] md:h-[150px]  mx-1 md:mx-0 mb-3 md:mb-[18px]">
+            <div className="flex">
+                <div className="mr-2 md:mr-[52px] md:w-[266px]  ">
+                    <img 
+                    className=" md:h-[150px] "
+                    src={hero.coverUrl} 
+                    alt={hero.name}></img>
                 </div>
-                <h3 className="text-2xl font-semibold text-white">
-                    <span className="absolute" />
-                    {hero.name}
-                </h3>
-                <div className="text-white mb-4">
-                    <span className="absolute  " />Single: {hero.single}
-                </div>
-                <SelectRating index={index}  updateRating={updateRating} />
+                <div className="h-10 md:h-[116px] mt-2 md:mt-[19px] md:mb-[15px] ">
+                    <p style={{ color: hero.color }} className="text-start font-raleway text-sm md:font-raleway-xl md:text-xl"> {hero.name}</p>
+                    <p className="text-start font-raleway text-xs md:text-base my-2 md:my-3"> {hero.single}</p>
+                    <RatingStars   index={index} updateRating={updateRating} hero={hero} />
+                </div> 
             </div>
+            <div style={{ backgroundColor: hero.color }} className="w-[9px]"></div>
         </div>
     )
 }
