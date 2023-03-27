@@ -16,11 +16,10 @@ function ListCard({ heroes }) {
     }
 
     return (
-        <div className=" mb-[521px]  max-w-[1366px]
-        m-auto">
+        <div className="mb-[521px]  max-w-[1366px] mx-auto">
             <Header heroesList={heroesList} setHeroeslist={setHeroeslist} />
             <div className=" bg-[#2A8EB0] border border-opacity-[.35] border-[#707070] text-center pt-[26px]  pb-[521px]">
-                <div className="w-[1080px] mx-auto">
+                <div className="max-w-[1080px] mx-auto">
                     {heroesList.map((hero, index) => (
                         <Card key={index} index={index} hero={hero} updateRating={updateRating} />
                     ))}

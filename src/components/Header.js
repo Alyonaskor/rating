@@ -30,8 +30,8 @@ function Header({ heroesList, setHeroeslist }) {
 
     return (
         <div>
-            <div className="h-[144.01px] flex justify-between border shadow-md">
-                <div className="relative w-[263px] h-[96.78px] ml-[167px] mt-[18px] ">
+            <div className="md:h-[144.01px] md:flex justify-between border shadow-md">
+                <div className="relative max-w-[263px] h-[96.78px] ml-10 md:ml-[167px] mt-[18px] ">
                     <img src="/images/Component1.png" alt="logo" ></img>
                     <div className="absolute bottom-0 left-0  bg-white h-[98px] w-2/5 -m-1">
                     <div className="absolute bottom-0 left-0  animate-[spin_4s_cubic-bezier(0,0,0.2,1)_infinite]">
@@ -39,20 +39,20 @@ function Header({ heroesList, setHeroeslist }) {
                     </div>
                 </div>
                 </div>
-                <div className="flex justify-between">
-                    <div className=' flex mr-2.5'>
-                        <img className=" mt-[49px] h-[44px]" src="/images/Ellipse1.png" alt="avatar"></img>
+                <div className=" flex  md:justify-between mx-20 md:mx-0 my-8 md:my-0">
+                    <div className=' flex mr-2.5 '>
+                        <img className="md:mt-[49px] h-[44px] w-[44px]" src="/images/Ellipse1.png" alt="avatar"></img>
                     </div>
-                    <p className="mr-[178px] mt-[60px] text-[#FF6100] font-raleway text-base ">
+                    <p className="md:mr-[178px] mt-3 md:mt-[60px] text-[#FF6100] font-raleway text-sm md:text-base ">
                         Created by John Smith
                     </p>
                 </div>
             </div>
 
-            <div className="flex h-[50px] bg-[#FF6100] justify-end items-center">
+            <div className="flex h-[50px] bg-[#FF6100] justify-center md:justify-end items-center">
                 <button
                     onClick={toggle}
-                    className="flex items-center min-w-[200px] h-[33px] pr-[15px] mr-[150px] border border-[#FFFFFF] bg-[#FF711A] text-[#FFFFFF] justify-between font-raleway text-base cursor-pointer hover:scale-105 ease-in-out duration-300 ">
+                    className="flex items-center min-w-[200px] h-[33px] pr-[15px] md:mr-[150px] border border-[#FFFFFF] bg-[#FF711A] text-[#FFFFFF] justify-between font-raleway text-base cursor-pointer hover:scale-105 ease-in-out duration-300 ">
                     <p className=" w-[18px] ml-[20px]  mt-[8px] mb-[7px] font-raleway text-base">
                         <img src="/images/Group14.png" alt="logo"></img>
                     </p>
