@@ -2,15 +2,15 @@ function RatingStars({ index, updateRating, hero }) {
 
     return (
         <div>
-            <div className="flex justify-between items-center">
+            <div className="flex items-center ">
                 <p className="hidden md:block md:font-raleway text-sm ">Rate me:</p>
-                <div className="flex justify-center gap-1">
+                <div className="flex">
                     {Array.from({ length: 10 }, (_, i) => (
                         <button
                             key={i}
                             value={`${i + 1}`}
                             onClick={(e) => { updateRating(e, index) }}
-                            className="mx-1 md:mx-[7px] text-center  md:w-[14px]  md:h-[14px] text-transparent ">
+                            className="mr-1   md:mx-[7px] text-center  md:w-[14px]  md:h-[14px] text-transparent ">
                             <svg
                                 style={(i + 1 <= hero.rating) ? { fill: hero.color, stroke: hero.color } : { stroke: hero.color }}
                                 xmlns="http://www.w3.org/2000/svg"
