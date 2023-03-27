@@ -10,14 +10,14 @@ function RatingStars({ index, updateRating, hero }) {
                             key={i}
                             value={`${i + 1}`}
                             onClick={(e) => { updateRating(e, index) }}
-                            className="mx-1  md:mx-[7px] text-center w-2 md:w-[14px] h-2 md:h-[14px] text-transparent ">
+                            className="mx-1 md:mx-[7px] text-center w-2 md:w-[14px] h-2 md:h-[14px] text-transparent ">
                             <svg
                                 style={(i + 1 <= hero.rating) ? { fill: hero.color, stroke: hero.color } : { stroke: hero.color }}
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 strokeWidth="1.5"
-                                className="w-[14px] h-[14px]"
+                                className=" w-4 md:w-[14px] h-4 md:h-[14px]"
                             >
                                 <path
                                     strokeLinecap="round"
