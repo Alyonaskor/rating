@@ -33,7 +33,7 @@ function Header({ heroesList, setHeroeslist }) {
             <div className="h-[144.01px] flex justify-between border shadow-md">
                 <div className="relative w-[263px] h-[96.78px] ml-[167px] mt-[18px] ">
                     <img src="/images/Component1.png" alt="logo" ></img>
-                    <div className="absolute bottom-0 left-0  bg-white h-[96.78px] w-2/5 ">
+                    <div className="absolute bottom-0 left-0  bg-white h-[98px] w-2/5 -m-1">
                     <div className="absolute bottom-0 left-0  animate-[spin_4s_cubic-bezier(0,0,0.2,1)_infinite]">
                         <img src="/images/Group14.png" alt="logo"></img>
                     </div>
