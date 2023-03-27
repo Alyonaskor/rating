@@ -2,8 +2,8 @@ function RatingStars({index, updateRating, color }) {
 
     return (
         <div>
-            <div className="flex justify-around items-center ">
-                <p className="text-center pr-2">Rate me:</p>
+            <div className="flex justify-between items-center">
+                <p className="font-raleway text-sm">Rate me:</p>
                 {Array.from({ length: 10 }, (_, i) => (
                     <button
                         value={`${i + 1}`}

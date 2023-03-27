@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-function Header({ heroesList, setHeroeslist   }) {
-   
+function Header({ heroesList, setHeroeslist }) {
     const [isActive, setIsActive] = useState(false);
     const [seconds, setSeconds] = useState(0);
 
@@ -30,29 +29,29 @@ function Header({ heroesList, setHeroeslist   }) {
     }, [isActive, seconds]);
 
     return (
-        <div className="">
+        <div>
             <div className="h-[144.01px] flex justify-between">
                 <div className=" w-[263px] h-[96.78px] ml-[167px] mt-[18px]">
                     <img src="/images/Component1.png" alt="logo" ></img>
                 </div>
                 <div className="flex justify-between">
-                    <div >
-                        <img className=" mt-[49px] ml-[10px]  h-[44px]" src="/images/Ellipse1.png" alt="avatar"></img>
+                    <div className='mr-2.5'>
+                        <img className=" mt-[49px] h-[44px]" src="/images/Ellipse1.png" alt="avatar"></img>
                     </div>
-                    <div className="flex justify-end border border-gray-400  mr-[178px] mt-[60px] w-[190px] h-[21px] text-[#FF6100]">
+                    <p className="mr-[178px] mt-[60px] text-[#FF6100] font-raleway text-base ">
                         Created by John Smith
-                    </div>
+                    </p>
                 </div>
             </div>
 
             <div className="flex h-[50px] bg-[#FF6100] items-center">
                 <button
                     onClick={toggle}
-                    className="flex  items-center ml-[1016px] w-[200px] h-[33px] pr-[15px] text-left mr-[150px]  border border-[#FFFFFF] bg-[#FF711A] text-[#FFFFFF] justify-between">
-                    <div className=" w-[18px] ml-[19px]  mt-[8px] mb-[7px]">
+                    className="flex items-center ml-[1016px] w-[200px] h-[33px] pr-[15px] mr-[150px] border border-[#FFFFFF] bg-[#FF711A] text-[#FFFFFF] justify-between font-raleway text-base">
+                    <p className=" w-[18px] ml-[20px]  mt-[8px] mb-[7px] font-raleway text-base">
                         <img src="/images/Group14.png" alt="logo"></img>
-                    </div>
-                    {isActive ? 'Stop Random Ratin' : 'Random Ratin'}
+                    </p>
+                    {isActive ? 'Stop Ratin' : 'Random Ratin'}
                 </button>
             </div>
         </div>
