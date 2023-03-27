@@ -40,7 +40,7 @@ function Header({ heroesList, setHeroeslist }) {
                 </div>
                 </div>
                 <div className="flex justify-between">
-                    <div className='mr-2.5'>
+                    <div className=' flex mr-2.5'>
                         <img className=" mt-[49px] h-[44px]" src="/images/Ellipse1.png" alt="avatar"></img>
                     </div>
                     <p className="mr-[178px] mt-[60px] text-[#FF6100] font-raleway text-base ">
@@ -52,7 +52,7 @@ function Header({ heroesList, setHeroeslist }) {
             <div className="flex h-[50px] bg-[#FF6100] items-center">
                 <button
                     onClick={toggle}
-                    className="flex items-center ml-[1016px] w-[200px] h-[33px] pr-[15px] mr-[150px] border border-[#FFFFFF] bg-[#FF711A] text-[#FFFFFF] justify-between font-raleway text-base cursor-pointer hover:scale-105 ease-in-out duration-300 ">
+                    className="flex items-center ml-[1016px] min-w-[200px] h-[33px] pr-[15px] mr-[150px] border border-[#FFFFFF] bg-[#FF711A] text-[#FFFFFF] justify-between font-raleway text-base cursor-pointer hover:scale-105 ease-in-out duration-300 ">
                     <p className=" w-[18px] ml-[20px]  mt-[8px] mb-[7px] font-raleway text-base">
                         <img src="/images/Group14.png" alt="logo"></img>
                     </p>
