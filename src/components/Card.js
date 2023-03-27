@@ -15,7 +15,7 @@ export default function Card({index, hero, updateRating }) {
                 <div className="h-[116px] mt-[19px] mb-[15px] ">
                     <p style={{ color: hero.color }} className="text-start font-raleway-xl text-xl"> {hero.name}</p>
                     <p className="text-start font-raleway text-base my-3"> {hero.single}</p>
-                    <RatingStars   index={index} updateRating={updateRating} color={hero.color} />
+                    <RatingStars   index={index} updateRating={updateRating} hero={hero} />
                 </div> 
             </div>
             <div style={{ backgroundColor: hero.color }} className="w-[9px]"></div>
